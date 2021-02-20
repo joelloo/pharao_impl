@@ -1,0 +1,39 @@
+<config>
+	<param name="playback_type" type="string">run</param> <!-- step, run -->
+	<param name="log_directory" type="string">D:\Data\MulRan\DCC03</param>
+	<param name="calibration_directory" type="string"></param>
+	<param name="num_skip_frames" type="integer">0</param>
+	<param name="image_registration_algorithm" type="string">lpfft</param> <!-- lpfft, imreg -->
+
+	<!-- Sensor and platform parameters -->
+	<param name="radar_max_range_metres" type="float">200</param>
+	<param name="radar_data_rate_hz" type="float">4</param>
+	<param name="platform_max_velocity_m_s" type="float">20</param>
+	<param name="platform_max_angular_velocity_rad_s" type="float">1.0472</params>
+
+	<!-- Not the same as paper (rotated counterclockwise 90 deg) because our polar images are oriented s.t. left <-> range 0 and right <-> max_range -->
+	<param name="coarse_polar_height" type="integer">400</param>
+	<param name="coarse_polar_width" type="integer">336</param> <!-- 336 -->
+	<param name="coarse_cartesian_height" type="integer">672</param> <!-- 672 -->
+	<param name="coarse_cartesian_width" type="integer">672</param> <!-- 672 -->
+	<param name="fine_polar_height" type="integer">400</param>
+	<param name="fine_polar_width" type="integer">500</param>
+	<param name="fine_cartesian_height" type="integer">1000</param>
+	<param name="fine_cartesian_width" type="integer">1000</param>
+	
+	<!-- Keyframing parameters -->
+	<param name="frame_sliding_window_size" type="integer">5</param>
+	<param name="confidence_alpha" type="float">0.8</param>
+
+	<!-- Pose graph optimisation parameters -->
+	<param name="use_pgo" type="boolean">false</param>
+	<param name="use_robust_loss" type="boolean">false</param>
+	<param name="robust_loss_param" type="float">1.0</param>
+	<param name="heading_correction_factor_scale" type="float">10.0</param>
+
+	<!-- lpfft parameters -->
+	<param name="lpfft_use_original" type="boolean">true</param>
+	<param name="lpfft_estimated_scale_threshold" type="float">1.8</param>
+
+	<!-- imreg parameters -->
+</config>
